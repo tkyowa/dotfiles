@@ -1,0 +1,8 @@
+:backtrace: true
+:benchmark: false
+:verbose: true
+:update_sources: false
+install: --no-ri --no-rdoc
+update: --no-ri --no-rdoc
+list: --both
+search: --both

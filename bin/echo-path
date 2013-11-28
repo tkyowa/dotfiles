@@ -1,0 +1,8 @@
+#!/bin/sh
+
+c=1
+for path_name in `echo ${PATH} | sed -e 's/:/ /g'`
+do
+  printf "%2d:%s\n" ${c} ${path_name}
+  c=`expr ${c} + 1`
+done

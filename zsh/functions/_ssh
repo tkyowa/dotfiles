@@ -1,0 +1,10 @@
+#compdef ssh
+if [ -f $HOME/.ssh/known_hosts ]; then
+
+  if [[ ! -e ${HOME}/._cache_ssh_comp ]] || [[ ._cache_ssh_comp -ot $HOME/.ssh/known_hosts ]] ; then
+    cat $HOME/.ssh/known_hosts | tr ',' ' ' | cut -d' ' -f1 > ._cache_ssh_comp
+    chmod 600 ._cache_ssh_comp
+  fi
+
+  compadd `cat ${HOME}/._cache_ssh_comp`
+fi

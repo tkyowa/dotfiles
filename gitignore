@@ -1,0 +1,7 @@
+TAGS
+.svn
+.zshrc_local
+.bashrc_local
+.vim/bundle/
+*.sw[po]
+*.log

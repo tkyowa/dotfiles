@@ -1,0 +1,2 @@
+#!/bin/sh
+svn stat | egrep '^\?' | ruby -ne 'puts $_.split(/\s+/)[1]' | grep -v '.swp' | grep -v '.tmp' | xargs svn add

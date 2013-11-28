@@ -1,0 +1,8 @@
+#compdef rake
+if [ -f Rakefile ]; then
+  if [[ ! -e ._cache_rake_comp ]] || [[ ._cache_rake_comp -ot Rakefile ]] ; then
+    rake --silent --tasks | cut -d " " -f 2 > ._cache_rake_comp
+  fi
+  compadd `cat ._cache_rake_comp`
+fi
+

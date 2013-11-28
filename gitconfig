@@ -1,0 +1,45 @@
+[user]
+  name = Takayuki Kyowa
+
+[github]
+  user = tkyowa
+
+[color]
+  ui = auto
+
+[core]
+  excludesfile = /Users/takayuki-kyowa/.gitignore
+  autocrlf = input
+  editor = vim
+
+[http]
+  sslVerify = false
+
+[alias]
+  s  = status --short
+  b  = branch
+  ci = commit
+  co = checkout
+  st = status
+  rc = rebase --continue
+
+  fetch-pulls = fetch origin +refs/pull/*:refs/remotes/pull/*
+
+  # 単語単位のdiff
+  wd = diff --word-diff
+
+  # ログをtreeで表示(簡易tig)
+  lg = log --graph --pretty=oneline --decorate --date=short --abbrev-commit --branches
+
+[help]
+  autocorrect = 1
+
+[include]
+  path = ~/.gitconfig.local
+
+[tips]
+# git add -p                       あるファイルの変更の一部だけをaddできる
+# git co -                         前回checkoutしたブランチに戻る
+# git co -t origin/BRANCH_NAME     リモートブランチを一発でローカルにチェックアウト(trackingもされる)
+# git log -S "text"                diffに指定のテキストを含むコミットを表示
+# git show :/fix                   コミットメッセージが指定の正規表現にマッチする最新のコミットを表示

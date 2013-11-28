@@ -1,0 +1,3 @@
+#!/bin/sh
+REFM=${HOME}/toolbox/ruby-refm
+ruby -Ke -I ${REFM}/bitclust/lib ${REFM}/bitclust/bin/refe.rb -d ${REFM}/db-1_8_7 "$@"

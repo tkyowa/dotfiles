@@ -1,0 +1,1 @@
+git name-rev --name-only HEAD

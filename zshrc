@@ -2,12 +2,8 @@
 # zshrc
 #
 # Supported Linux and Mac OS X.
-# OS X requirement coreutils. (install by homebrew, not override standard utils!).
+# OS X requirement coreutils. (install by homebrew, don't override standard utils!).
 #
-
-# coreutils
-[[ -f '/usr/local/Cellar/coreutils/8.12/aliases' ]] && source /usr/local/Cellar/coreutils/8.12/aliases
-[[ -f '/usr/local/Cellar/coreutils/8.14/aliases' ]] && source /usr/local/Cellar/coreutils/8.14/aliases
 
 HISTFILE=${HOME}/.zsh_history
 HISTSIZE=100000
@@ -58,9 +54,11 @@ if [ -z `echo ${PATH} | grep ${HOME}/local/bin` ]; then
   export PATH=${HOME}/local/bin:${PATH}
   export PATH=${HOME}/bin:${PATH}
   export PATH=${HOME}/.bin:${PATH}
+fi
 
-  #[[ -d "${HOME}/.gem/ruby/1.8/bin" ]] && export PATH=${HOME}/.gem/ruby/1.8/bin:${PATH}
-  #[[ -d "${HOME}/.gem/ruby/1.9.1/bin" ]] && export PATH=${HOME}/.gem/ruby/1.9.1/bin:${PATH}
+# coreutils
+if [[ `uname` = "Darwin" ]]; then
+  export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
 fi
 
 #

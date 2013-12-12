@@ -23,5 +23,3 @@ alias ll='ls -lh --color=tty --time-style=long-iso'
 if [ -f ~/.bashrc_local ]; then
   source ~/.bashrc_local
 fi
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

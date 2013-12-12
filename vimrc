@@ -19,7 +19,7 @@ if $SUDO_USER == ''
   Bundle 'Shougo/unite.vim'
   Bundle 'h1mesuke/unite-outline'
   Bundle 'Shougo/neocomplcache'
-  Bundle 'Shougo/neocomplcache-snippets-complete'
+  Bundle 'Shougo/neosnippet'
 endif
 
 Bundle 'cakebaker/scss-syntax.vim'

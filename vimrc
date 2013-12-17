@@ -210,6 +210,7 @@ let g:syntastic_loc_list_height    = 5   " エラーウィンドウの高さ
 let g:syntastic_mode_map = { 'mode': 'passive',
                            \ 'active_filetypes': ['ruby'],
                            \ 'passive_filetypes': [] }
+let g:syntastic_ruby_mri_args='-T1 -c'   " Rubyの警告は表示しない
 
 "
 " PowerLine

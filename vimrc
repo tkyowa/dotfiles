@@ -9,7 +9,8 @@ let mapleader = ','
 " --------------> filetype temporary disabled for Vundle(https://github.com/gmarik/vundle/blob/master/README.md)
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim/
+"call vundle#begin()
 call vundle#rc()
 
 "Bundle 'gmarik/vundle'
@@ -47,6 +48,7 @@ Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-rails'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'ujihisa/unite-colorscheme'
 
 Bundle 'bufman.vim'
 Bundle 'svn-diff.vim'
@@ -65,6 +67,7 @@ Bundle 'ZoomWin'
 Bundle 'Lokaltog/vim-distinguished'
 Bundle 'Wombat'
 Bundle 'wombat256.vim'
+Bundle 'michalbachowski/vim-wombat256mod'
 Bundle 'xoria256.vim'
 "Bundle 'newspaper.vim'
 "Bundle 'pyte'
@@ -76,6 +79,9 @@ Bundle 'xoria256.vim'
 "Bundle 'jellybeans.vim'
 "Bundle 'synic.vim'
 "Bundle 'chriskempson/vim-tomorrow-theme'
+
+" React Native系
+Bundle 'leafgarland/typescript-vim'
 
 filetype plugin indent on
 " <-------------- filetype enabled
@@ -362,11 +368,15 @@ if has('gui_macvim')
 elseif has('gui_win32')
   colorscheme xoria256
 elseif has('mac')
+  " colorscheme default
+  "colorscheme xoria256
   colorscheme wombat256mod
 elseif has('unix')
-  colorscheme default
+  colorscheme wombat256mod
+  "colorscheme default
 else
-  colorscheme default
+  colorscheme wombat256mod
+  "colorscheme default
 endif
 
 
@@ -629,6 +639,7 @@ if filereadable(expand('~/.vim/syntax/rspec-result.vim'))
   source ~/.vim/syntax/rspec-result.vim
 endif
 
+au BufRead,BufNewFile *.scss set filetype=scss.css
 
 "=============================
 " Tips

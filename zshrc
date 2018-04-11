@@ -47,18 +47,9 @@ add-zsh-hook precmd _update_vcs_info_msg
 export LANG=ja_JP.UTF-8
 export TMP="${HOME}/tmp"
 
-#
-# PATH
-#
-if [ -z `echo ${PATH} | grep ${HOME}/local/bin` ]; then
-  export PATH=${HOME}/local/bin:${PATH}
-  export PATH=${HOME}/bin:${PATH}
-  export PATH=${HOME}/.bin:${PATH}
-fi
-
 # coreutils
 if [[ `uname` = "Darwin" ]]; then
-  export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
+  # export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
 fi
 
 #
@@ -122,6 +113,7 @@ alias -g S='| sort'
 alias -g T='| tail'
 alias -g V='| vim -R -'
 alias -g be='bundle exec'
+alias -g bes='bundle exec spring'
 alias -g bi='bundle install'
 
 #
@@ -148,6 +140,7 @@ if [[ `uname` = "Darwin" ]] ; then
   alias dircolors='gdircolors'
 else
   alias ls='ls --color=auto'
+  # alias top="top -c"
 fi
 alias puts="echo"
 alias ll='ls -lh --time-style=long-iso'
@@ -155,7 +148,6 @@ alias vi='vim'
 alias du='du -m'
 alias du-sorted='/usr/bin/du -sm * | sort -rn'
 alias df='df -h'
-alias top="top -c"
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
@@ -209,6 +201,11 @@ alias rake='rake -g'
 alias con='script/console'
 alias pry-console='pry -r config/environment'
 alias spec='spec -c'
+
+#
+# Grep
+#
+alias ack-without-spec='ack --ignore-dir=spec'
 
 #
 # Setting files
@@ -522,3 +519,15 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 # zsh local
 [[ -f ${HOME}/.zshrc_local ]] && source ${HOME}/.zshrc_local
+
+#
+# PATH
+#
+if [ -z `echo ${PATH} | grep ${HOME}/local/bin` ]; then
+  export PATH=${HOME}/local/bin:${PATH}
+  export PATH=${HOME}/bin:${PATH}
+  export PATH=${HOME}/.bin:${PATH}
+fi
+export PATH=${HOME}/local/bin:${PATH}
+export PATH=${HOME}/.local/bin:${PATH}
+export PATH=${HOME}/.nodebrew/current/bin:${PATH}

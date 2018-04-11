@@ -1,4 +1,5 @@
---known-types
 --ignore-dir=coverage
+--ignore-dir=tmp
+--type=ruby
 --type-add
-ruby=.haml,.rake,.scss,.coffee
+ruby=.haml,.rake,.scss,.coffee,.yml,.sample

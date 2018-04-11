@@ -9,7 +9,6 @@
 
 [core]
   excludesfile = /Users/takayuki-kyowa/.gitignore
-  autocrlf = input
   editor = vim
 
 [http]
@@ -29,7 +28,17 @@
   wd = diff --word-diff
 
   # ログをtreeで表示(簡易tig)
-  lg = log --graph --pretty=oneline --decorate --date=short --abbrev-commit --branches
+  log-tree = log --graph --pretty=oneline --decorate --date=short --abbrev-commit --branches
+  log-oneline = log --format='%C(yellow)%h%Creset %<|(25) %C(cyan)%an%Creset %<|(100) %s %Cgreen[%cd]%Creset' --date=short
+
+  # 空のコミットをしよう
+  ci-empty = commit --allow-empty-message --allow-empty
+
+  # untracked な
+  stash-all = stash save --include-untracked
+
+  revert-merge-commit = revert -m 1
+
 
 [help]
   autocorrect = 1
@@ -37,9 +46,20 @@
 [include]
   path = ~/.gitconfig.local
 
+[pager]
+  log  = diff-highlight | less
+  show = diff-highlight | less
+  diff = diff-highlight | less
+
 [tips]
 # git add -p                       あるファイルの変更の一部だけをaddできる
 # git co -                         前回checkoutしたブランチに戻る
 # git co -t origin/BRANCH_NAME     リモートブランチを一発でローカルにチェックアウト(trackingもされる)
 # git log -S "text"                diffに指定のテキストを含むコミットを表示
 # git show :/fix                   コミットメッセージが指定の正規表現にマッチする最新のコミットを表示
+[grep]
+	lineNumber = true
+[merge "mergepbx"]
+	name = Xcode project files merger
+	driver = mergepbx %O %A %B
+	note = auto-generated configuration by cpad2 upgrade

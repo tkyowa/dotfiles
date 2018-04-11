@@ -37,4 +37,13 @@ done
 #
 # Vundle
 #
-#${HOME}/dotfiles/.bin/vundle
+
+# mkdir -p ~/.vim/bundle
+# git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+# ${HOME}/dotfiles/.bin/vundle-install
+
+#
+# Brew
+#
+
+# brew install coreutils                                                                                         [/usr/local/share/tmux] <ruby 2.0.0p247 41674> [master]
